@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Oxford Meadow — Mongolian Cashmere, Honestly Made</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ANNOUNCE -->
+<div class="announce">
+  <strong>Free carbon-neutral delivery</strong> on all UK orders over £150 &nbsp;·&nbsp; Lifetime repair, always free
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Certified B Corp
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Good Cashmere Standard
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Carbon Neutral
+      </div>
+      <div class="trust-sep"></div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        1% for the Planet
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-shell" id="navShell">
+<div class="container">
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-a" href="#collection">Women</a>
+    <a class="nav-a" href="#collection">Men</a>
+    <a class="nav-a" href="#collection">Accessories</a>
+  </div>
+
+  <a class="nav-logo" href="#">
+    <img src="https://oxfordmeadow.com/cdn/shop/files/white_9137e9ee-1f2e-4d36-b5c4-b68ddde5d1d5.png?v=1761773419&width=300"
+         alt="Oxford Meadow"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
+    <span class="nav-logo-text" style="display:none">Oxford Meadow<em>Mongolian Cashmere</em></span>
+  </a>
+
+  <div class="nav-right">
+    <a class="nav-a" href="#sustainability">Our Standard</a>
+    <a class="nav-a" href="#journal">Journal</a>
+    <div class="nav-icons">
+      <button class="icon-btn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Open cart" onclick="openCart()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count">0</span>
+      </button>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+</div>
+</div>
+
+<!-- MOBILE NAV -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-drawer-bg" id="mobileDrawerBg"></div>
+  <div class="mobile-drawer-panel">
+    <nav class="mobile-nav-links">
+      <a class="mobile-nav-link" href="#collection" onclick="closeMobileNav()">Women</a>
+      <a class="mobile-nav-link" href="#collection" onclick="closeMobileNav()">Men</a>
+      <a class="mobile-nav-link" href="#collection" onclick="closeMobileNav()">Accessories</a>
+      <a class="mobile-nav-link" href="#sustainability" onclick="closeMobileNav()">Our Standard</a>
+      <a class="mobile-nav-link" href="#journal" onclick="closeMobileNav()">Journal</a>
+    </nav>
+  </div>
+</div>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-bg" id="cartBg"></div>
+  <div class="cart-panel">
+    <div class="cart-head">
+      <h3>Your Bag</h3>
+      <button class="icon-btn" onclick="closeCart()" aria-label="Close cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <p style="text-align:center;color:var(--warm-grey);font-size:.875rem;padding:3rem 0">Your bag is empty.</p>
+    </div>
+    <div class="cart-foot" id="cartFoot" style="display:none">
+      <div class="cart-subtotal"><span>Subtotal</span><span id="cartTotal">£0.00</span></div>
+      <button class="cart-checkout">Checkout Securely</button>
+      <button class="cart-apple">Buy with  Pay</button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" id="heroBg"
+       style="background-image:url('https://oxfordmeadow.com/cdn/shop/files/IMG_8530_-_Edited.jpg?v=1762013450&width=3840')"></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-content">
+    <div class="container">
+      <p class="hero-tag">Övörkhangai Province, Mongolia</p>
+      <h1 class="hero-h1">We didn't set out<br>to make<br><em>beautiful clothes.</em></h1>
+      <p class="hero-sub">We set out to prove the most luxurious cashmere in the world could also be the most honest. Founded by Meg Genden. Made by 340 herder families. Worn for a lifetime.</p>
+      <div class="hero-actions">
+        <a href="#collection" class="btn btn-ivory">Shop the Collection</a>
+        <a href="#story" class="btn btn-ghost">Our Story</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- PRESS -->
+<div class="press">
+  <div class="container">
+    <div class="press-inner">
+      <span class="press-label">As seen in</span>
+      <div class="press-logos">
+        <span class="press-logo">Vogue</span>
+        <div class="press-divider"></div>
+        <span class="press-logo">The Guardian</span>
+        <div class="press-divider"></div>
+        <span class="press-logo">Harper's Bazaar</span>
+        <div class="press-divider"></div>
+        <span class="press-logo">Financial Times</span>
+        <div class="press-divider"></div>
+        <span class="press-logo">Wallpaper*</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <div class="container">
+    <div class="manifesto-inner reveal">
+      <p class="label">Why Oxford Meadow Exists</p>
+      <p class="manifesto-q">Cashmere became a dirty word.<br><em>We're making it honest again.</em></p>
+      <p class="manifesto-body">The global cashmere industry pushed prices down, cut corners on animal welfare, and obscured supply chains — then called it luxury. We chose a different path: pay herders fairly, use only Grade A fibre, publish every supplier name, and make garments built to outlast fashion entirely.</p>
+      <a href="#story" class="btn btn-ghost" style="margin-inline:auto">Our Founding Story</a>
+      <div class="founder-row">
+        <img class="founder-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&q=80" alt="Meg Genden"/>
+        <div>
+          <div class="founder-name">Meg Genden</div>
+          <div class="founder-title">Founder, Oxford Meadow</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal"><div class="stat-num">340+</div><div class="stat-label">Herder Families</div><div class="stat-detail">Named, mapped, paid above market. No intermediaries.</div></div>
+      <div class="stat reveal d1"><div class="stat-num">15.5µ</div><div class="stat-label">Max Fibre Micron</div><div class="stat-detail">Grade A only. Industry standard is 19µm. We hold every lot.</div></div>
+      <div class="stat reveal d2"><div class="stat-num">100%</div><div class="stat-label">Supply Chain Visible</div><div class="stat-detail">Every facility. Every audit score. Published and linkable.</div></div>
+      <div class="stat reveal d3"><div class="stat-num">∞</div><div class="stat-label">Repair Guarantee</div><div class="stat-detail">Free repairs for life. No receipt. No conditions. No expiry.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- COLLECTION -->
+<section class="section" id="collection">
+  <div class="container">
+    <div class="collection-header">
+      <div>
+        <p class="label reveal">The Collections</p>
+        <h2 class="h2 reveal d1">Lumé · Quiet Form · Ox Haven</h2>
+      </div>
+      <div class="ctabs">
+        <button class="ctab on" onclick="filterProducts('all',this)">All</button>
+        <button class="ctab" onclick="filterProducts('women',this)">Lumé — Women</button>
+        <button class="ctab" onclick="filterProducts('men',this)">Quiet Form — Men</button>
+        <button class="ctab" onclick="filterProducts('acc',this)">Ox Haven</button>
+      </div>
+    </div>
+
+    <div class="products">
+
+      <div class="pcard reveal" data-cat="women" onclick="openModal('lume-cardigan-ash')">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://oxfordmeadow.com/cdn/shop/files/OxfordMeadowEarly-06_a316259f-8237-45db-9ac8-012caedf478e.jpg?v=1760994309&width=800" alt="Lumé Cardigan Ash" loading="lazy"/>
+          <span class="pcard-badge badge-best">Bestseller</span>
+          <div class="pcard-swatches">
+            <div class="swatch on" style="background:#C8C4BC" title="Ash"></div>
+            <div class="swatch" style="background:#FAF6EE;border:1px solid #ccc" title="Cream"></div>
+            <div class="swatch" style="background:#A0522D" title="Deep Copper"></div>
+            <div class="swatch" style="background:#1C2B3A" title="Navy"></div>
+          </div>
+        </div>
+        <div class="pcard-hover">
+          <button class="pcard-add" onclick="event.stopPropagation();openModal('lume-cardigan-ash')">Select Size</button>
+          <button class="pcard-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        </div>
+        <div class="pcard-info">
+          <p class="pcard-coll">Lumé — Women</p>
+          <h3 class="pcard-name">Lumé Cardigan</h3>
+          <p class="pcard-mat">100% Grade A Mongolian Cashmere</p>
+          <p class="pcard-price">£279</p>
+        </div>
+      </div>
+
+      <div class="pcard reveal d1" data-cat="women" onclick="openModal('lume-crew-cream')">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://oxfordmeadow.com/cdn/shop/files/OxfordMeadowEarly-05.jpg?v=1760993867&width=800" alt="Lumé Crew Cream" loading="lazy"/>
+          <span class="pcard-badge badge-new">New Colour</span>
+          <div class="pcard-swatches">
+            <div class="swatch on" style="background:#FAF6EE;border:1px solid #ccc" title="Cream"></div>
+            <div class="swatch" style="background:#A0522D" title="Deep Copper"></div>
+            <div class="swatch" style="background:#1C2B3A" title="Navy"></div>
+          </div>
+        </div>
+        <div class="pcard-hover">
+          <button class="pcard-add" onclick="event.stopPropagation();openModal('lume-crew-cream')">Select Size</button>
+          <button class="pcard-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        </div>
+        <div class="pcard-info">
+          <p class="pcard-coll">Lumé — Women</p>
+          <h3 class="pcard-name">Lumé Crew</h3>
+          <p class="pcard-mat">100% Grade A Mongolian Cashmere</p>
+          <p class="pcard-price">£246</p>
+        </div>
+      </div>
+
+      <div class="pcard reveal d2" data-cat="women" onclick="openModal('lume-high-ash')">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://oxfordmeadow.com/cdn/shop/files/IMG_6871.jpg?v=1761597877&width=800" alt="Lumé High Ash" loading="lazy"/>
+          <span class="pcard-badge badge-limited">Limited</span>
+          <div class="pcard-swatches">
+            <div class="swatch on" style="background:#C8C4BC" title="Ash"></div>
+            <div class="swatch" style="background:#FAF6EE;border:1px solid #ccc" title="Cream"></div>
+            <div class="swatch" style="background:#A0522D" title="Deep Copper"></div>
+            <div class="swatch" style="background:#1C2B3A" title="Navy"></div>
+          </div>
+        </div>
+        <div class="pcard-hover">
+          <button class="pcard-add" onclick="event.stopPropagation();openModal('lume-high-ash')">Select Size</button>
+          <button class="pcard-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        </div>
+        <div class="pcard-info">
+          <p class="pcard-coll">Lumé — Women</p>
+          <h3 class="pcard-name">Lumé High</h3>
+          <p class="pcard-mat">100% Grade A Mongolian Cashmere</p>
+          <p class="pcard-price">£489</p>
+        </div>
+      </div>
+
+      <div class="pcard reveal d3" data-cat="men" onclick="openModal('qf-crew-ash')">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://oxfordmeadow.com/cdn/shop/files/IMG_6592.jpg?v=1761597825&width=800" alt="Quiet Form Crew Ash" loading="lazy"/>
+          <div class="pcard-swatches">
+            <div class="swatch on" style="background:#C8C4BC" title="Ash"></div>
+            <div class="swatch" style="background:#A0522D" title="Deep Copper"></div>
+            <div class="swatch" style="background:#1A1A18" title="Noir"></div>
+          </div>
+        </div>
+        <div class="pcard-hover">
+          <button class="pcard-add" onclick="event.stopPropagation();openModal('qf-crew-ash')">Select Size</button>
+          <button class="pcard-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        </div>
+        <div class="pcard-info">
+          <p class="pcard-coll">Quiet Form — Men</p>
+          <h3 class="pcard-name">Quiet Form Crew</h3>
+          <p class="pcard-mat">100% Grade A Mongolian Cashmere</p>
+          <p class="pcard-price">£265</p>
+        </div>
+      </div>
+
+      <div class="pcard reveal" data-cat="men" onclick="openModal('qf-crew-noir')">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://oxfordmeadow.com/cdn/shop/files/OxfordMeadowEarly-02.jpg?v=1760982993&width=800" alt="Quiet Form Crew Noir" loading="lazy"/>
+          <div class="pcard-swatches">
+            <div class="swatch on" style="background:#1A1A18" title="Noir"></div>
+            <div class="swatch" style="background:#C8C4BC" title="Ash"></div>
+            <div class="swatch" style="background:#A0522D" title="Deep Copper"></div>
+          </div>
+        </div>
+        <div class="pcard-hover">
+          <button class="pcard-add" onclick="event.stopPropagation();openModal('qf-crew-noir')">Select Size</button>
+          <button class="pcard-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        </div>
+        <div class="pcard-info">
+          <p class="pcard-coll">Quiet Form — Men</p>
+          <h3 class="pcard-name">Quiet Form Crew</h3>
+          <p class="pcard-mat">100% Grade A Mongolian Cashmere</p>
+          <p class="pcard-price">£265</p>
+        </div>
+      </div>
+
+      <div class="pcard reveal d1" data-cat="men" onclick="openModal('qf-vee-ash')">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://oxfordmeadow.com/cdn/shop/files/IMG_7531.jpg?v=1761598454&width=800" alt="Quiet Form Vee Ash" loading="lazy"/>
+          <span class="pcard-badge badge-new">New</span>
+          <div class="pcard-swatches">
+            <div class="swatch on" style="background:#C8C4BC" title="Ash"></div>
+            <div class="swatch" style="background:#A0522D" title="Deep Copper"></div>
+          </div>
+        </div>
+        <div class="pcard-hover">
+          <button class="pcard-add" onclick="event.stopPropagation();openModal('qf-vee-ash')">Select Size</button>
+          <button class="pcard-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        </div>
+        <div class="pcard-info">
+          <p class="pcard-coll">Quiet Form — Men</p>
+          <h3 class="pcard-name">Quiet Form Vee</h3>
+          <p class="pcard-mat">100% Grade A Mongolian Cashmere</p>
+          <p class="pcard-price">£219</p>
+        </div>
+      </div>
+
+      <div class="pcard reveal d2" data-cat="acc" onclick="openModal('ox-wrap')">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://oxfordmeadow.com/cdn/shop/collections/IMG_7994_ef08a8e2-05f6-4bfd-b7af-fde96af73c5b.jpg?v=1762036123&width=800" alt="Ox Haven Wrap" loading="lazy"/>
+          <span class="pcard-badge badge-best">Top Rated</span>
+          <div class="pcard-swatches">
+            <div class="swatch on" style="background:#A0522D" title="Deep Copper"></div>
+            <div class="swatch" style="background:#C8C4BC" title="Ash"></div>
+            <div class="swatch" style="background:#FAF6EE;border:1px solid #ccc" title="Cream"></div>
+          </div>
+        </div>
+        <div class="pcard-hover">
+          <button class="pcard-add" onclick="event.stopPropagation();openModal('ox-wrap')">Add to Bag</button>
+          <button class="pcard-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        </div>
+        <div class="pcard-info">
+          <p class="pcard-coll">The Ox Haven</p>
+          <h3 class="pcard-name">Ox Haven Wrap</h3>
+          <p class="pcard-mat">100% Pure Mongolian Cashmere</p>
+          <p class="pcard-price">£165</p>
+        </div>
+      </div>
+
+      <div class="pcard reveal d3" data-cat="acc" onclick="openModal('ox-hat')">
+        <div class="pcard-img-wrap">
+          <img class="pcard-img" src="https://oxfordmeadow.com/cdn/shop/collections/IMG_7794_12864f48-ea3e-4ff0-8ca7-a52f055bcede.jpg?v=1762036141&width=800" alt="Ox Haven Hat" loading="lazy"/>
+          <div class="pcard-swatches">
+            <div class="swatch on" style="background:#1A1A18" title="Noir"></div>
+            <div class="swatch" style="background:#C8C4BC" title="Ash"></div>
+            <div class="swatch" style="background:#A0522D" title="Deep Copper"></div>
+          </div>
+        </div>
+        <div class="pcard-hover">
+          <button class="pcard-add" onclick="event.stopPropagation();openModal('ox-hat')">Add to Bag</button>
+          <button class="pcard-wish"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
+        </div>
+        <div class="pcard-info">
+          <p class="pcard-coll">The Ox Haven</p>
+          <h3 class="pcard-name">Ox Haven Hat</h3>
+          <p class="pcard-mat">100% Pure Mongolian Cashmere</p>
+          <p class="pcard-price">£95</p>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <a href="https://oxfordmeadow.com/collections/all" class="btn btn-outline" target="_blank">View All 76 Products</a>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="container">
+    <div class="story-grid">
+      <div class="reveal">
+        <img class="story-img" src="https://oxfordmeadow.com/cdn/shop/files/85bf2ad9-8c69-4b1e-a209-121329996a53.jpg?v=1762023753&width=1400" alt="Oxford Meadow editorial" loading="lazy"/>
+      </div>
+      <div class="story-text reveal d2">
+        <p class="label">The Founding Story</p>
+        <h2 class="h2">Mongolian heritage.<br><em>British design.</em><br>No compromise.</h2>
+        <p class="story-body">Meg Genden didn't start Oxford Meadow to build a brand. She started it because she couldn't find a single piece of cashmere she trusted completely — not the sourcing, not the wages, not the claim it would last.</p>
+        <p class="story-body">Her answer was to go directly to Mongolia. To sit with herder families in Övörkhangai. To understand the land and the animal before designing a single garment. To bridge centuries-old Mongolian craftsmanship with a modern, minimal form that would never go out of style.</p>
+        <blockquote class="story-quote">"What you wear should care for you — not just adorn you."<br><small style="font-family:var(--ff-sans);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ash);font-style:normal;margin-top:.5rem;display:block">— Meg Genden, Founder</small></blockquote>
+        <a href="#transparency" class="btn btn-ghost" style="align-self:flex-start">The Oxford Meadow Standard →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section class="section">
+  <div class="container">
+    <div class="journey-header reveal">
+      <p class="label">Supply Chain</p>
+      <h2 class="h2">From Herder to You</h2>
+      <p style="font-size:.9rem;line-height:1.75;color:var(--warm-grey);margin-top:.75rem">Hover each stage to see how your garment travels from the Mongolian steppe to your wardrobe — with full traceability at every step.</p>
+    </div>
+    <div class="journey-steps">
+      <div class="jstep reveal">
+        <img class="jstep-img" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=500&q=75" alt="Herder families" loading="lazy"/>
+        <div class="jstep-veil"></div>
+        <div class="jstep-body"><div class="jstep-n">01</div><div class="jstep-title">Herder Families</div><div class="jstep-desc">340+ partner families. Hand-combed, never sheared. Goats roam 2.3M hectares of certified pastureland. Paid above market, always.</div></div>
+      </div>
+      <div class="jstep reveal d1">
+        <img class="jstep-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=75" alt="Fibre grading" loading="lazy"/>
+        <div class="jstep-veil"></div>
+        <div class="jstep-body"><div class="jstep-n">02</div><div class="jstep-title">Fibre Grading</div><div class="jstep-desc">Independent third-party grading. Only fibres under 15.5µm pass. The industry allows 19µm. We reject the rest, every time.</div></div>
+      </div>
+      <div class="jstep reveal d2">
+        <img class="jstep-img" src="https://images.unsplash.com/photo-1581873372796-635b67ca2008?w=500&q=75" alt="Ulaanbaatar atelier" loading="lazy"/>
+        <div class="jstep-veil"></div>
+        <div class="jstep-body"><div class="jstep-n">03</div><div class="jstep-title">Ulaanbaatar Atelier</div><div class="jstep-desc">Knitted and hand-finished in our partner atelier. Fair wages. Annual independent audits — results published.</div></div>
+      </div>
+      <div class="jstep reveal d3">
+        <img class="jstep-img" src="https://images.unsplash.com/photo-1495121553079-4c61bcce1894?w=500&q=75" alt="Delivery" loading="lazy"/>
+        <div class="jstep-veil"></div>
+        <div class="jstep-body"><div class="jstep-n">04</div><div class="jstep-title">Carbon-Neutral to You</div><div class="jstep-desc">Recycled packaging, zero virgin plastic, fully offset delivery. QR code inside links to your garment's full provenance report.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUSTAINABILITY SCROLL -->
+<section class="sustain" id="sustainability">
+  <div class="container">
+    <div class="sustain-header reveal">
+      <p class="label">Our Sustainability Scorecard</p>
+      <h2 class="h2">Every number, verified.</h2>
+      <p>Scroll to see where Oxford Meadow stands — against the industry, against our own past, against what we promised.</p>
+    </div>
+  </div>
+  <div class="sustain-track-wrap" id="sustainTrack">
+    <div class="sustain-track">
+      <div class="scard"><div class="scard-top-line" style="background:linear-gradient(90deg,var(--copper),var(--copper-light))"></div><div class="scard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="scard-num">98<sup>%</sup></div><div class="scard-lbl">Supply Chain Traced</div><p class="scard-desc">Every fibre lot linked to a named herder family with GPS coordinates. Industry average: under 12%.</p><div class="scard-bar"><div class="sbar-row"><span>Oxford Meadow</span><span>98%</span></div><div class="sbar-track"><div class="sbar-fill" style="background:var(--copper-light);width:98%"></div></div><div class="sbar-row"><span>Industry avg.</span><span>12%</span></div><div class="sbar-track"><div class="sbar-fill" style="background:rgba(255,255,255,.2);width:12%"></div></div></div></div>
+      <div class="scard"><div class="scard-top-line" style="background:linear-gradient(90deg,#2A3D2E,#4a7c59)"></div><div class="scard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div><div class="scard-num">0<sup>net</sup></div><div class="scard-lbl">Carbon Emissions</div><p class="scard-desc">Scope 1, 2, and 3 fully measured and offset since 2022. Carbon-neutral delivery on every order worldwide.</p><div class="scard-bar"><div class="sbar-row"><span>Offset rate</span><span>100%</span></div><div class="sbar-track"><div class="sbar-fill" style="background:#4a7c59;width:100%"></div></div></div></div>
+      <div class="scard"><div class="scard-top-line" style="background:linear-gradient(90deg,#1C2B3A,#3a5a7a)"></div><div class="scard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="scard-num">15.5<sup>µm</sup></div><div class="scard-lbl">Max Fibre Micron</div><p class="scard-desc">Grade A only. The industry permits up to 19µm. We hold every single lot to 15.5µm — softer, rarer, harder to source.</p><div class="scard-bar"><div class="sbar-row"><span>Our limit</span><span>15.5µm</span></div><div class="sbar-track"><div class="sbar-fill" style="background:#3a5a7a;width:55%"></div></div><div class="sbar-row"><span>Industry limit</span><span>19µm</span></div><div class="sbar-track"><div class="sbar-fill" style="background:rgba(255,255,255,.2);width:100%"></div></div></div></div>
+      <div class="scard"><div class="scard-top-line" style="background:linear-gradient(90deg,var(--copper-light),#e8954a)"></div><div class="scard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="scard-num">340<sup>+</sup></div><div class="scard-lbl">Herder Families</div><p class="scard-desc">Direct partnerships. No brokers. Every family paid above GCS fair-price benchmarks. Names and profiles published on our supplier map.</p><div class="scard-bar"><div class="sbar-row"><span>Fair wage premium</span><span>+34%</span></div><div class="sbar-track"><div class="sbar-fill" style="background:var(--copper-light);width:74%"></div></div></div></div>
+      <div class="scard"><div class="scard-top-line" style="background:linear-gradient(90deg,#4a7c59,#2A3D2E)"></div><div class="scard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><div class="scard-num">2.3<sup>M ha</sup></div><div class="scard-lbl">Certified Pastureland</div><p class="scard-desc">All partner pastures independently monitored for soil carbon, grassland biomass, and water table. Quarterly data published.</p><div class="scard-bar"><div class="sbar-row"><span>Land health score 2024</span><span>87/100</span></div><div class="sbar-track"><div class="sbar-fill" style="background:#4a7c59;width:87%"></div></div></div></div>
+      <div class="scard"><div class="scard-top-line" style="background:linear-gradient(90deg,#8B6914,var(--copper))"></div><div class="scard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div class="scard-num">∞</div><div class="scard-lbl">Repair Guarantee</div><p class="scard-desc">Every garment repaired free, for life. No conditions, no receipt, no expiry. 1,847 repairs completed in 2024.</p><div class="scard-bar"><div class="sbar-row"><span>Repairs completed 2024</span><span>1,847</span></div><div class="sbar-track"><div class="sbar-fill" style="background:var(--copper);width:100%"></div></div></div></div>
+      <div class="scard"><div class="scard-top-line" style="background:linear-gradient(90deg,#1A1A18,#555)"></div><div class="scard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div class="scard-num">1<sup>%</sup></div><div class="scard-lbl">Revenue to Planet</div><p class="scard-desc">1% of all revenue to environmental organisations via 1% for the Planet — every year, regardless of profitability. £214,000 donated since founding.</p></div>
+      <div class="scard"><div class="scard-top-line" style="background:linear-gradient(90deg,var(--copper),var(--forest))"></div><div class="scard-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="scard-num">112<sup>.4</sup></div><div class="scard-lbl">B Corp Score</div><p class="scard-desc">Certified since 2021. Score: 112.4 — above the 80-point minimum. Fashion industry median: 62.</p><div class="scard-bar"><div class="sbar-row"><span>Oxford Meadow</span><span>112.4</span></div><div class="sbar-track"><div class="sbar-fill" style="background:var(--copper-light);width:88%"></div></div><div class="sbar-row"><span>Industry median</span><span>62</span></div><div class="sbar-track"><div class="sbar-fill" style="background:rgba(255,255,255,.2);width:48%"></div></div></div></div>
+    </div>
+  </div>
+  <div class="sustain-nav">
+    <button class="sustain-btn" id="sLeft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <button class="sustain-btn" id="sRight"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+  </div>
+</section>
+
+<!-- IMPACT CALCULATOR -->
+<section class="impact">
+  <div class="container">
+    <div class="impact-grid">
+      <div class="impact-text reveal">
+        <p class="label">Environmental Impact</p>
+        <h2 class="h2">Your purchase,<br>measured honestly.</h2>
+        <p>We don't believe in vague "eco-friendly" claims. Every Oxford Meadow garment has been independently assessed against conventional cashmere production using Quantis LCA methodology.</p>
+        <p>The numbers are real. The methodology is published. You can check our working.</p>
+        <a href="#" class="btn btn-dark" style="margin-top:1.5rem">Read the 2024 Impact Report</a>
+      </div>
+      <div class="calc-box reveal d2">
+        <h3>How much did you just save?</h3>
+        <div class="range-group">
+          <div class="range-top"><span>Garments</span><span id="gCount">1</span></div>
+          <input type="range" min="1" max="12" value="1" id="impactRange"/>
+        </div>
+        <div class="calc-results">
+          <div class="cresult"><div class="cresult-val" id="rWater">1,840</div><div class="cresult-label">Litres Water Saved</div></div>
+          <div class="cresult"><div class="cresult-val" id="rCo2">4.2</div><div class="cresult-label">kg CO₂ Avoided</div></div>
+          <div class="cresult"><div class="cresult-val" id="rChem">94</div><div class="cresult-label">g Chemicals Avoided</div></div>
+          <div class="cresult"><div class="cresult-val" id="rWage">£22</div><div class="cresult-label">Fair Wage Premium Paid</div></div>
+        </div>
+        <p style="font-size:.68rem;color:var(--ash);margin-top:1rem;line-height:1.6">Quantis LCA methodology, 2024. vs. non-certified conventional cashmere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCY -->
+<section class="trans" id="transparency">
+  <div class="container">
+    <div class="trans-head reveal">
+      <p class="label">The Oxford Meadow Standard</p>
+      <h2 class="h2">Radical transparency.<br>No exceptions.</h2>
+      <p>If we can't show our working, we won't make the claim. Every supplier, every audit, every number — public, linked, verifiable.</p>
+    </div>
+    <div class="trans-grid">
+      <div class="tcard reveal"><svg class="tcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><h4>Live Supplier Map</h4><p>Every herder family, processing facility, and logistics partner. Named. GPS-located. With individual audit scores.</p><a class="tcard-cta" href="https://oxfordmeadow.com" target="_blank">Open Map →</a></div>
+      <div class="tcard reveal d1"><svg class="tcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg><h4>All Certifications</h4><p>B Corp, Good Cashmere Standard, UN SDG #12, 1% for the Planet. Every certificate linked to the issuing body.</p><a class="tcard-cta" href="https://oxfordmeadow.com" target="_blank">Download Certificates →</a></div>
+      <div class="tcard reveal d2"><svg class="tcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h4>Annual Impact Report</h4><p>Water use by facility. Fair wage data by role. Scope 1–3 emissions. Pasture health scores. Published every year.</p><a class="tcard-cta" href="https://oxfordmeadow.com" target="_blank">Read 2024 Report →</a></div>
+      <div class="tcard reveal"><svg class="tcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><h4>Herder Profiles</h4><p>Every product links to the herder family who produced the fibre. Their names, their land, their words.</p><a class="tcard-cta" href="https://oxfordmeadow.com" target="_blank">Meet the Herders →</a></div>
+      <div class="tcard reveal d1"><svg class="tcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><h4>Pricing Breakdown</h4><p>We publish what each garment costs to make — materials, labour, transport, our margin. Opaque pricing is how exploitation hides.</p><a class="tcard-cta" href="https://oxfordmeadow.com" target="_blank">See Cost Breakdown →</a></div>
+      <div class="tcard reveal d2"><svg class="tcard-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg><h4>Land Health Data</h4><p>Quarterly grassland biomass and soil carbon data across all partner pastures. Monitored independently. Published without editing.</p><a class="tcard-cta" href="https://oxfordmeadow.com" target="_blank">View Land Reports →</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNAL -->
+<section class="section" id="journal">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:clamp(2.5rem,5vw,4rem)">
+      <div class="reveal"><p class="label">The Journal</p><h2 class="h2">Stories that matter.</h2></div>
+      <a href="https://oxfordmeadow.com/blogs/news" class="btn btn-outline reveal" target="_blank">All Articles</a>
+    </div>
+    <div class="journal-grid">
+      <div class="jcard lead reveal">
+        <img class="jcard-img" src="https://oxfordmeadow.com/cdn/shop/files/IMG_8530_-_Edited.jpg?v=1762013450&width=1200" alt="Mongolia frontline" loading="lazy" style="min-height:360px"/>
+        <div class="jcard-body"><p class="jcard-cat">Sustainability</p><h3 class="jcard-title">Life at −40°C on Mongolia's Frontline of Luxury</h3><p class="jcard-excerpt">Cashmere's sustainability crisis is more nuanced than headlines claim. Here's what the science says — and why regenerative herding may be the answer the steppe has always known.</p><p class="jcard-meta">14 min · May 2025</p></div>
+      </div>
+      <div>
+        <div class="jcard reveal d1" style="margin-bottom:2px">
+          <img class="jcard-img" src="https://oxfordmeadow.com/cdn/shop/files/IMG_8037.jpg?v=1761598644&width=800" alt="Lumé Crew Deep Copper" loading="lazy"/>
+          <div class="jcard-body"><p class="jcard-cat">Consumer Culture</p><h3 class="jcard-title">What Your £30 Jumper Actually Cost</h3><p class="jcard-excerpt">The maths of fast cashmere — land, labour, and who pays the hidden price.</p><p class="jcard-meta">9 min · Apr 2025</p></div>
+        </div>
+        <div class="jcard reveal d2">
+          <img class="jcard-img" src="https://oxfordmeadow.com/cdn/shop/collections/OxfordMeadowEarly-05_589876f2-baf4-4ff8-b497-127905fa66f2.jpg?v=1762024734&width=800" alt="Women's collection" loading="lazy"/>
+          <div class="jcard-body"><p class="jcard-cat">Cashmere Care</p><h3 class="jcard-title">How to Make One Sweater Last Twenty Years</h3><p class="jcard-excerpt">Our complete care guide — washing, storing, repairing, and when to send it back to us.</p><p class="jcard-meta">6 min · Mar 2025</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews">
+  <div class="container">
+    <div class="reviews-top">
+      <div class="reveal"><p class="label">Verified Reviews</p><div class="reviews-avg">4.9</div><div class="stars"><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><p class="reviews-count">2,847 verified reviews</p></div>
+      <a href="#" class="btn btn-outline reveal">Read All Reviews</a>
+    </div>
+    <div class="reviews-grid">
+      <div class="rcard reveal"><div class="rcard-head"><img class="rcard-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=88&q=80" alt=""/><div><div class="rcard-name">Sophia L.</div><div class="stars" style="gap:2px"><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="rcard-loc" style="font-size:.68rem;color:var(--warm-grey);margin-top:2px">London · Verified Buyer</div></div></div><p class="rcard-text">"I've worn cashmere from brands that charge twice as much. This is in a different league — and knowing the full supply chain just makes wearing it feel right."</p><p class="rcard-product">Lumé Cardigan · Ash</p><img class="rcard-img" src="https://oxfordmeadow.com/cdn/shop/files/OxfordMeadowEarly-06_a316259f-8237-45db-9ac8-012caedf478e.jpg?v=1760994309&width=600" alt="" loading="lazy"/></div>
+      <div class="rcard reveal d1"><div class="rcard-head"><img class="rcard-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=88&q=80" alt=""/><div><div class="rcard-name">Marcus T.</div><div class="stars" style="gap:2px"><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="rcard-loc" style="font-size:.68rem;color:var(--warm-grey);margin-top:2px">New York · Verified Buyer</div></div></div><p class="rcard-text">"Three winters. Zero pilling. The QR code linking to the actual herder family is extraordinary — and should be standard practice across the whole industry."</p><p class="rcard-product">Quiet Form Crew · Ash</p><img class="rcard-img" src="https://oxfordmeadow.com/cdn/shop/files/IMG_6592.jpg?v=1761597825&width=600" alt="" loading="lazy"/></div>
+      <div class="rcard reveal d2"><div class="rcard-head"><img class="rcard-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=88&q=80" alt=""/><div><div class="rcard-name">Priya M.</div><div class="stars" style="gap:2px"><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg><svg class="star" style="width:11px;height:11px" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div><div class="rcard-loc" style="font-size:.68rem;color:var(--warm-grey);margin-top:2px">Singapore · Verified Buyer</div></div></div><p class="rcard-text">"Arrived with a handwritten note from the herder family. The lifetime repair promise sealed it. I will not buy cashmere from anyone else."</p><p class="rcard-product">Ox Haven Wrap · Deep Copper</p><img class="rcard-img" src="https://oxfordmeadow.com/cdn/shop/files/IMG_7292.jpg?v=1761598043&width=600" alt="" loading="lazy"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- REPAIR -->
+<div class="repair">
+  <div class="container">
+    <div class="repair-inner">
+      <div class="repair-text reveal"><h2 class="h2">Repair, always free.</h2><p>Send any Oxford Meadow piece back — in any condition, at any point in its life — and we'll restore it. No receipt. No expiry. No charge.</p></div>
+      <a href="https://oxfordmeadow.com" class="btn btn-white reveal d2" target="_blank">Register Your Garment</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="container">
+    <div class="nl-inner reveal">
+      <p class="label">Stay in the Circle</p>
+      <h2 class="h2">Worth reading.<br>Worth wearing.</h2>
+      <p>Impact reports before they're public. New colourways before they drop. Journal pieces on fashion, sustainability, and the steppe. No noise.</p>
+      <form class="nform" onsubmit="handleSub(event)">
+        <input class="ninput" type="email" placeholder="your@email.com" required/>
+        <button class="nsub" type="submit">Subscribe</button>
+      </form>
+      <p class="n-note">No spam. Unsubscribe anytime. We never sell your data.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <img src="https://oxfordmeadow.com/cdn/shop/files/white_9137e9ee-1f2e-4d36-b5c4-b68ddde5d1d5.png?v=1761773419&width=300" alt="Oxford Meadow" style="height:24px;width:auto;margin-bottom:0" onerror="this.style.display='none'"/>
+        <p class="foot-bio">Ethical luxury cashmere sourced directly from 340+ herder families on the Mongolian steppe. Founded by Meg Genden. Certified B Corp.</p>
+        <div class="foot-socials">
+          <a class="fsoc" href="https://www.instagram.com/oxfordmeadow" target="_blank" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a>
+          <a class="fsoc" href="https://www.tiktok.com/@oxfordmeadow" target="_blank" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col"><h5>Shop</h5><ul class="foot-links"><li><a href="#">Lumé — Women</a></li><li><a href="#">Quiet Form — Men</a></li><li><a href="#">The Ox Haven</a></li><li><a href="#">New Arrivals</a></li><li><a href="https://oxfordmeadow.com/collections/all" target="_blank">All 76 Products</a></li></ul></div>
+      <div class="foot-col"><h5>Our Standard</h5><ul class="foot-links"><li><a href="#">Founding Story</a></li><li><a href="#">Supplier Map</a></li><li><a href="#">Impact Report 2024</a></li><li><a href="#">Certifications</a></li><li><a href="#">Pricing Breakdown</a></li></ul></div>
+      <div class="foot-col"><h5>Help</h5><ul class="foot-links"><li><a href="#">Shipping &amp; Returns</a></li><li><a href="#">Size Guide</a></li><li><a href="https://oxfordmeadow.com/pages/cashmere-care" target="_blank">Cashmere Care</a></li><li><a href="#">Lifetime Repair</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <p class="foot-copy">© 2025 Oxford Meadow Ltd. All rights reserved.</p>
+      <div class="pay-badges"><span class="pbadge">Visa</span><span class="pbadge">Mastercard</span><span class="pbadge">Apple Pay</span><span class="pbadge">Shop Pay</span><span class="pbadge">Amex</span><span class="pbadge">Klarna</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="closeModal(event)">
+  <div style="position:relative;width:min(960px,100%)">
+    <button class="modal-close" onclick="closeModal(null,true)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <div class="modal" id="modalInner">
+      <img id="mImg" src="" alt="" class="modal-img"/>
+      <div class="modal-body" id="mBody"></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
